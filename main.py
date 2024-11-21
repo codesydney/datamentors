@@ -2,33 +2,45 @@ from fasthtml.common import *
 
 app, rt = fast_app()
 
-def card_3d(text, background, description):
-    """Generate a 3D card component with inline styles."""
+def card_3d(title, background, description, title_link, description_link):
+    """Generate a 3D card component with inline styles and links."""
     return Div(
         Div(
-            text,
-            Div(description, _class="card-description"),
+            Div(
+                _style=f"""
+                    background-image: url('{background}');
+                    background-size: cover;
+                    background-position: center;
+                    width: 600px;
+                    height: 400px;
+                """
+            ),
+            Div(
+                A(title, href=title_link, target="_blank", _class="card-title"),
+                A(description, href=description_link, target="_blank", _class="card-description"),
+                _class="card-text",
+                _style="padding: 10px; text-align: center; font-size: 14px;"
+            ),
             _class="card-content",
-            _style=f"""
-                background-image: url('{background}');
-                background-size: cover;
-                background-position: center;
-                width: 300px;
-                height: 200px;
-                transform: rotateY(0deg);
-                transition: transform 0.5s;
-                position: relative;
-            """
+            _style="width: 600px; height: 450px; display: flex; flex-direction: column; justify-content: space-between;"
         ),
         _class="card",
         _style="perspective: 1000px; margin: 20px;",
-        _data_title=text,
+        _data_title=title,
         _data_description=description
     )
 
 @rt("/")
 def get(req):
     return Div(
+        Div(
+            Img(
+                src="img/DataMentorsLogo.png",
+                alt="DataMentors Logo",
+                _style="width: 200px; margin-bottom: 10px;"
+            ),
+            _style="text-align: center;"
+        ),        
         H1("DataMentors"),
         P(
             "A Joint Initiative by ",
@@ -41,9 +53,20 @@ def get(req):
             _style="margin: 20px;"
         ),
         Div(
-            card_3d("Project 1", "https://via.placeholder.com/300x200", "This is a demo project."),
-            card_3d("Project 2", "https://via.placeholder.com/300x200", "An example of a portfolio."),
-            card_3d("Project 3", "https://via.placeholder.com/300x200", "Another demo project for testing."),
+            card_3d(
+                "Emigrant Data Analysis (1981-2022) | ", 
+                "img/DEP4G-Emigration.png", 
+                " Chris Formoso", 
+                "https://emigrant-country-dashboard.streamlit.app/", 
+                "https://ca.linkedin.com/in/chris-formoso"
+            ),
+            card_3d(
+                "Foreign Spouse Exploratory Data Analysis | ", 
+                "img/DEP4G-Foreign-Spouse.png", 
+                " Jun Miano", 
+                "https://foreign-spouse.streamlit.app/", 
+                "https://ph.linkedin.com/in/junmiano1202"
+            ),
             _id="portfolio-container",
             _style="display: flex; flex-wrap: wrap; justify-content: center;"
         ),
