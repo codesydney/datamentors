@@ -70,20 +70,6 @@ def get(req):
             _id="portfolio-container",
             _style="display: flex; flex-wrap: wrap; justify-content: center;"
         ),
-        Div(
-            Div(
-                "Copyright © 2025 Code.Sydney Pty Ltd ABN 37 625 436 151",
-                _style="text-align: left; padding-left: 20px;"
-            ),
-            Div(
-                A("Privacy Policy 2025", href="/pdf/Code.Sydney_Client_Terms_2025.pdf", target="_blank", _style="margin-right: 10px;"),
-                "|",
-                A("Terms 2025", href="/pdf/Code.Sydney_Client_Terms_2025.pdf", target="_blank", _style="margin-left: 10px;"),
-                _style="text-align: right; padding-right: 20px;"
-            ),
-            _class="footer",
-            _style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid #ccc; margin-top: 20px;"
-        ),
         Script("""
         document.getElementById('search-input').addEventListener('input', function() {
             const query = this.value.toLowerCase();
