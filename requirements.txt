@@ -1,1 +1,4 @@
-fasthtml
+python-fasthtml
+uvicorn>=0.29
+python-multipart
+sqlite-utils
