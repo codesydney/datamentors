@@ -1,6 +1,10 @@
 from fasthtml.common import *
+from fastapi.staticfiles import StaticFiles
 
 app, rt = fast_app()
+
+# Serve files from the "pdf" folder as static files
+app.mount("/pdf", StaticFiles(directory="pdf"), name="pdf")
 
 def card_3d(title, background, description, title_link, description_link):
     """Generate a 3D card component with inline styles and links."""
