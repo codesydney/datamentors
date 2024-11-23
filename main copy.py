@@ -1,11 +1,73 @@
 from fasthtml.common import *
 from fastapi.staticfiles import StaticFiles
-from styles import styles
 
 app, rt = fast_app()
 
 # Serve files from the "pdf" folder as static files
 app.mount("/pdf", StaticFiles(directory="pdf"), name="pdf")
+
+# Define common styles in a dedicated style tag for easier adjustments and reuse
+styles = Style("""
+    .card-content {
+        width: 600px;
+        height: auto;  /* Set to auto to allow flexible height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-image {
+        background-size: cover;
+        background-position: center;
+        width: 600px;
+        height: 550px;  /* Adjust this height value to create the desired visual effect */
+    }    
+    .card-title {
+        margin-top: 10px;  /* Add a top margin to create space between the card image and the title */
+        margin-bottom: 0;  /* No bottom margin */
+        padding: 0;  /* No padding */
+        font-size: 18px;
+        text-align: center;
+    }
+    .card-description {
+        margin: 0;  /* No margin */
+        padding: 0;  /* No padding */
+        font-size: 16px;
+        text-align: center;
+    }
+    .linkedin-icon {
+        width: 30px;
+        height: 30px;
+    }
+    .linkedin-link {
+        display: block;
+        text-align: center;
+        margin: 0;  /* No margin */
+        padding: 0;  /* No padding */
+    }
+    .booking-button {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 0 auto;  /* Remove top margin and align centrally */
+        text-align: center;
+        background-color: #507499;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .burger-icon {
+        cursor: pointer;
+        font-size: 24px;
+    }
+    .menu-content {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+""")
 
 def generate_linkedin_link(linkedin_link):
     """Generate LinkedIn link with an icon."""
