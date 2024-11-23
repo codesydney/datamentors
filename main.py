@@ -130,7 +130,7 @@ MENTOR_CARDS = [
         "Mentor 1 | ",
         "img/DM-Engramar.png",
         "Engramar Bollas",
-        "Python Mentor ($25 ph)",
+        "Python Mentor ($35 ph)",
         "https://linkedin.com/in/engramarbollas",
         show_booking=False,
         booking_link="https://example.com/booking/engramar-bollas"
