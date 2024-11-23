@@ -187,17 +187,17 @@ def render_page(title, heading, placeholder, cards):
         ),
         Script("""
         document.getElementById('search-input').addEventListener('input', function() {
-            const query = this.value.toLowerCase();
-            const cards = document.querySelectorAll('.card');
-            
+            const query = this.value.toLowerCase(); // Convert query to lowercase
+            const cards = document.querySelectorAll('.card'); // Select all cards
+
             cards.forEach(card => {
-                const title = card.getAttribute('data-title').toLowerCase();
-                const description = card.getAttribute('data-description').toLowerCase();
-                
-                // Check if the query matches title or description
+                const title = card.querySelector('.card-title').textContent.toLowerCase(); // Get card-title text
+                const description = card.querySelector('.card-description').textContent.toLowerCase(); // Get card-description text
+
+                // Check if query matches either title or description
                 const isMatch = title.includes(query) || description.includes(query);
-                
-                card.style.display = isMatch ? 'block' : 'none';
+
+                card.style.display = isMatch ? 'block' : 'none'; // Show or hide cards based on match
             });
         });
         """),
