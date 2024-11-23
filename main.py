@@ -64,7 +64,8 @@ def render_navbar():
             Div(
                 A("Home", href="/", _class="menu-item", _style="display: block; padding: 10px 20px;"),
                 A("Portfolios", href="/portfolios", _class="menu-item", _style="display: block; padding: 10px 20px;"),
-                _class="menu-content"
+                _class="menu-content",
+                _style="display: none; position: absolute; top: 40px; right: 0; background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); z-index: 999;"
             ),
             _style="position: relative;"
         ),
@@ -82,7 +83,7 @@ def render_navbar():
             }
         });
         """),
-        _style="position: fixed; top: 10px; right: 10px; z-index: 1000;"
+        _style="position: fixed; top: 10px; right: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); z-index: 1000;"
     )
 
 @rt("/")
