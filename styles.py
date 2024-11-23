@@ -39,11 +39,11 @@ styles = Style("""
     }
     .booking-button {
         display: inline-block;
-        padding: 8px 16px;
+        padding: 5px 16px;
         margin: 0 auto;
         text-align: center;
-        background-color: #507499;
-        color: white;
+        background-color: #ffffff;
+        color: black;
         text-decoration: none;
         border-radius: 5px;
     }

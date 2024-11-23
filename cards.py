@@ -29,7 +29,7 @@ def card_3d(title, background, line1, line2, linkedin_link, show_booking=True, b
         P(line2, _class="card-description"),
     ]
     if show_booking:
-        card_body.append(generate_booking_button(booking_link))
+        card_body.append(generate_booking_button(booking_link))        
     card_body.append(generate_linkedin_link(linkedin_link))
 
     return Div(
@@ -59,10 +59,10 @@ MENTOR_CARDS = [
         "Mentor 1 | ",
         "img/DM-Engramar.png",
         "Engramar Bollas",
-        "Python Mentor ($35 ph)",
+        "Python Mentor ($0 per hour)",
         "https://linkedin.com/in/engramarbollas",
-        show_booking=False,
-        booking_link="https://example.com/booking/engramar-bollas"
+        show_booking=True,
+        booking_link="https://koalendar.com/u/Zx3cWsCF08Y17UwrvgEwmR3VKbs1"
     )
 ]
 
