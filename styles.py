@@ -60,4 +60,9 @@ styles = Style("""
         border: 1px solid #ccc;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
+    body, html {
+        overflow-x: hidden;
+    }
+
 """)
