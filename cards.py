@@ -59,7 +59,7 @@ MENTOR_CARDS = [
         "Mentor 1 | ",
         "img/DM-Engramar.png",
         "Engramar Bollas",
-        "Python Mentor ($0 per hour)",
+        "Basic Python Mentor ($0 per hour)",
         "https://linkedin.com/in/engramarbollas",
         show_booking=True,
         booking_link="https://koalendar.com/u/Zx3cWsCF08Y17UwrvgEwmR3VKbs1"

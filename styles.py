@@ -65,4 +65,8 @@ styles = Style("""
         overflow-x: hidden;
     }
 
+    a {
+        text-decoration: none;
+    }
+
 """)
