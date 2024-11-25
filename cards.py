@@ -62,7 +62,7 @@ MENTOR_CARDS = [
         "Basic Python Mentor ($0 per hour)",
         "https://linkedin.com/in/engramarbollas",
         show_booking=True,
-        booking_link="https://koalendar.com/u/Zx3cWsCF08Y17UwrvgEwmR3VKbs1"
+        booking_link="https://koalendar.com/e/meet-with-code-sydney"
     )
 ]
 
