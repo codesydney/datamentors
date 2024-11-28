@@ -4,7 +4,7 @@ def generate_linkedin_link(linkedin_link):
     """Generate LinkedIn link with an icon."""
     return A(
         Img(
-            src="img/linkedin-icon.svg",
+            src="img/linktoproject.png",
             alt="LinkedIn",
             _class="linkedin-icon"
         ),
@@ -72,7 +72,7 @@ PORTFOLIO_CARDS = [
         "img/DEP4G-Emigration.png",
         "Analysis of emigration trends",
         "Chris Formoso",
-        "https://linkedin.com/in/chris-formoso",
+        "https://github.com/dataengineeringpilipinas/datahub/blob/main/docs/projects/emigrant-country-dashboard.md",
         show_booking=False
     ),
     card_3d(
@@ -80,7 +80,15 @@ PORTFOLIO_CARDS = [
         "img/DEP4G-Foreign-Spouse.png",
         "Insights into foreign spouse demographics",
         "Jun Miano",
-        "https://linkedin.com/in/junmiano1202",
+        "https://github.com/Junmiano/DEP/tree/main",
         show_booking=False
-    )
+    ),
+    card_3d(
+        "Stormchaser",
+        "img/DEP4G-StormChaser.png",
+        "A real-time typhoon visualization system that scrapes and animates Western Pacific typhoon data.",
+        "Noel Adante",
+        "https://github.com/TreacherousDev/Stormchaser",
+        show_booking=False
+    )    
 ]
