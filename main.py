@@ -18,6 +18,36 @@ def render_head(title):
         Meta(name="viewport", content="width=device-width, initial-scale=1.0"),
     )
 
+def render_footer():
+    """Render the footer section similar to Code.Sydney with Privacy Policy and Terms links."""
+    return Div(
+        Div(
+            Div(
+                P(
+                    "A joint Initiave by ",
+                    A("Code.Sydney", href="https://www.code.sydney", target="_blank"),
+                    " | ",
+                    A("Data Engineering Pilipinas", href="https://dataengineering.ph", target="_blank")
+                ),
+                _style="text-align: center; margin: 10px 0;"
+            ),
+            Div(
+                P(
+                    A("Privacy Policy", href="/pdf/Code.Sydney_Website_Privacy_Policy_2025.pdf", target="_blank"),
+                    " | ",
+                    A("Terms", href="/pdf/Code.Sydney_Client_Terms_2025.pdf", target="_blank"),
+                ),
+                _style="text-align: center; margin: 10px 0; font-size: small;"
+            ),
+            Div(
+                P("© 2025 Code.Sydney. All rights reserved."),
+                _style="text-align: center; margin: 10px 0; font-size: small; color: gray;"
+            ),
+            _style="background-color: #f8f9fa; padding: 20px; border-top: 1px solid #ddd;"
+        )
+    )
+
+
 def render_page(heading, placeholder, cards):
     """Render content for both Home and Portfolios tabs with dynamic heading, placeholder, and cards."""
     return Body(
@@ -104,6 +134,7 @@ def get(req):
         render_head("Data Mentors - Home"),  # Set the title for the Home page
         render_navbar(),
         render_page("", "Search mentors...", MENTOR_CARDS),
+        render_footer()
     )
 
 @rt("/portfolios")
@@ -112,6 +143,7 @@ def portfolios(req):
         render_head("Data Mentors - Portfolios"),  # Set the title for the Portfolios page
         render_navbar(),
         render_page("", "Search portfolios...", PORTFOLIO_CARDS),
+        render_footer()
     )
 
 serve()

@@ -87,7 +87,7 @@ MENTOR_CARDS = [
         "Mentor 1 | ",
         "img/DM-Engramar.png",
         "Engramar Bollas",
-        "Basic Python Mentor ($0 per hour)",
+        "Beginner Python Mentor ($0 per hour)",
         "Guidance on Python for Everybody Course by Prof. Charles Severance",
         "https://linkedin.com/in/engramarbollas",
         show_booking=True,

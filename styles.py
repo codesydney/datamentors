@@ -44,8 +44,8 @@ styles = Style("""
     }
     .booking-button {
         display: inline-block;
-        padding: 5px 16px;
-        margin: 2px auto; /* Center and add spacing above/below */
+        padding: 10px 18px;
+        margin: 5px auto; /* Center and add spacing above/below */
         text-align: center;
         background-color: #4c6c8c;
         color: white;
