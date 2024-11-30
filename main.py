@@ -19,15 +19,33 @@ def render_head(title):
     )
 
 def render_footer():
-    """Render the footer section similar to Code.Sydney with Privacy Policy and Terms links."""
+    """Render the footer section similar to Code.Sydney with Privacy Policy, Terms links, and logos."""
     return Div(
         Div(
             Div(
                 P(
-                    "A joint Initiave by ",
-                    A("Code.Sydney", href="https://www.code.sydney", target="_blank"),
+                    "A joint Initiative by ",
+                    A(
+                        Img(
+                            src="/img/cslogo.png",
+                            alt="Code.Sydney Logo",
+                            _style="width: 20px; vertical-align: middle; margin-right: 5px;"
+                        ),
+                        "Code.Sydney",
+                        href="https://www.code.sydney",
+                        target="_blank"
+                    ),
                     " | ",
-                    A("Data Engineering Pilipinas", href="https://dataengineering.ph", target="_blank")
+                    A(
+                        Img(
+                            src="/img/deplogo.png",
+                            alt="Data Engineering Pilipinas Logo",
+                            _style="width: 20px; vertical-align: middle; margin-right: 5px;"
+                        ),
+                        "Data Engineering Pilipinas",
+                        href="https://dataengineering.ph",
+                        target="_blank"
+                    )
                 ),
                 _style="text-align: center; margin: 10px 0;"
             ),
@@ -63,12 +81,33 @@ def render_page(heading, placeholder, cards):
             ),
             H1("Data Mentors", _style="text-align: center; margin-bottom: 20px;"),
             H2(heading, _style="text-align: center; margin-bottom: 20px;"),
-            P(
-                "A Joint Initiative by ",
-                A("Code.Sydney", href="https://www.code.sydney", target="_blank"),
-                " and ",
-                A("Data Engineering Pilipinas", href="https://dataengineering.ph/", target="_blank")
-            ),
+            Div(
+                P(
+                    "A joint Initiative by ",
+                    A(
+                        Img(
+                            src="/img/cslogo.png",
+                            alt="Code.Sydney Logo",
+                            _style="width: 20px; vertical-align: middle; margin-right: 5px;"
+                        ),
+                        "Code.Sydney",
+                        href="https://www.code.sydney",
+                        target="_blank"
+                    ),
+                    " | ",
+                    A(
+                        Img(
+                            src="/img/deplogo.png",
+                            alt="Data Engineering Pilipinas Logo",
+                            _style="width: 20px; vertical-align: middle; margin-right: 5px;"
+                        ),
+                        "Data Engineering Pilipinas",
+                        href="https://dataengineering.ph",
+                        target="_blank"
+                    )
+                ),
+                _style="text-align: center; margin: 10px 0;"
+            ),            
             Div(
                 Input(_type="text", _placeholder=placeholder, _id="search-input", _style="padding: 10px; width: 300px;"),
                 _style="margin: 20px;"

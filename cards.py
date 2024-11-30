@@ -1,12 +1,13 @@
 from fasthtml.common import A, Div, H3, Img, P, Style
 
-def generate_linkedin_link(linkedin_link):
+def generate_linkedin_link(linkedin_link, margin_top="0"):
     """Generate LinkedIn link with an icon."""
     return A(
         Img(
             src="img/linkedin-icon.svg",
             alt="LinkedIn",
-            _class="linkedin-icon"
+            _class="linkedin-icon",
+            style=f"margin-top: {margin_top};"  # Control the top margin dynamically
         ),
         href=linkedin_link,
         target="_blank",
@@ -51,13 +52,12 @@ def card_3d(
     if show_booking and not is_portfolio:
         # Add the booking button with dynamic margin
         card_body.append(generate_booking_button(booking_link, margin_bottom=button_margin_bottom))
-        # Add space after the booking button if provided
-        card_body.append(P(" ", style=f"margin-top: {space_between_button_and_icon};"))
     
     if is_portfolio:
         card_body.append(generate_portfolio_link(link, icon_size))
     else:
-        card_body.append(generate_linkedin_link(link))
+        # Pass space_between_button_and_icon as the margin_top for LinkedIn
+        card_body.append(generate_linkedin_link(link, margin_top=space_between_button_and_icon))
 
     return Div(
         Div(
@@ -73,7 +73,7 @@ def card_3d(
                 *card_body,
                 _class="card-content"
             ),
-            _class="card-content"
+            _class="card-content",
         ),
         _class="card",
         _style="perspective: 1000px; margin: 20px;",
@@ -87,12 +87,12 @@ MENTOR_CARDS = [
         "Mentor 1 | ",
         "img/DM-Engramar.png",
         "Engramar Bollas",
-        "Beginner Python Mentor ($0 per hour)",
+        "Basic Python Mentor ($0 per hour)",
         "Guidance on Python for Everybody Course by Prof. Charles Severance",
         "https://linkedin.com/in/engramarbollas",
         show_booking=True,
         booking_link="https://koalendar.com/e/meet-with-code-sydney",
-        button_margin_bottom="1px",  # Adjust space below the booking button
+        button_margin_bottom="1px",  # Space below the button
         space_between_button_and_icon="1px"  # Reduced space between button and LinkedIn icon
     )
 ]
