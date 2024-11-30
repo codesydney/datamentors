@@ -27,25 +27,32 @@ def generate_portfolio_link(portfolio_link, icon_size=None):
         _class="portfolio-link"
     )
 
-def generate_booking_button(booking_link):
-    """Generate a booking button."""
+def generate_booking_button(booking_link, margin_bottom="10px"):
+    """Generate a booking button with controllable margin."""
     return A(
         "Book Now",
         href=booking_link,
         target="_blank",
         _class="booking-button",
-        style="border: 1px solid #000; padding: 10px;"
+        style=f"margin-bottom: {margin_bottom};"
     )
 
-def card_3d(title, background, line1, line2, link, show_booking=True, booking_link="", is_portfolio=False, icon_size=None):
+def card_3d(
+    title, background, line1, line2, line3, link, show_booking=True, 
+    booking_link="", is_portfolio=False, icon_size=None, 
+    button_margin_bottom="5px", space_between_button_and_icon="5px"
+):
     """Generate a 3D card component with mentor or portfolio details."""
     card_body = [
         H3(line1, _class="card-title"),
         P(line2, _class="card-description"),
+        P(line3, _class="card-description-small"),
     ]
     if show_booking and not is_portfolio:
-        card_body.append(generate_booking_button(booking_link))
-        card_body.append(P(" ", _class="spacer", style="margin: 5px 0;"))  # Adjust margins
+        # Add the booking button with dynamic margin
+        card_body.append(generate_booking_button(booking_link, margin_bottom=button_margin_bottom))
+        # Add space after the booking button if provided
+        card_body.append(P(" ", style=f"margin-top: {space_between_button_and_icon};"))
     
     if is_portfolio:
         card_body.append(generate_portfolio_link(link, icon_size))
@@ -66,12 +73,13 @@ def card_3d(title, background, line1, line2, link, show_booking=True, booking_li
                 *card_body,
                 _class="card-content"
             ),
-            _class="card-content",
+            _class="card-content"
         ),
         _class="card",
         _style="perspective: 1000px; margin: 20px;",
         _data_title=title,
-        _data_description=line1
+        _data_description=line1,
+        _data_description2=line2
     )
 
 MENTOR_CARDS = [
@@ -80,9 +88,12 @@ MENTOR_CARDS = [
         "img/DM-Engramar.png",
         "Engramar Bollas",
         "Basic Python Mentor ($0 per hour)",
+        "Guidance on Python for Everybody Course by Prof. Charles Severance",
         "https://linkedin.com/in/engramarbollas",
         show_booking=True,
-        booking_link="https://koalendar.com/e/meet-with-code-sydney"
+        booking_link="https://koalendar.com/e/meet-with-code-sydney",
+        button_margin_bottom="1px",  # Adjust space below the booking button
+        space_between_button_and_icon="1px"  # Reduced space between button and LinkedIn icon
     )
 ]
 
@@ -92,6 +103,7 @@ PORTFOLIO_CARDS = [
         "img/DEP4G-Emigration.png",
         "Analysis of emigration trends",
         "Chris Formoso",
+        "DEP DataHub Contribution",
         "https://github.com/dataengineeringpilipinas/datahub/blob/main/docs/projects/emigrant-country-dashboard.md",
         show_booking=False,
         is_portfolio=True,
@@ -102,6 +114,7 @@ PORTFOLIO_CARDS = [
         "img/DEP4G-Foreign-Spouse.png",
         "Insights into foreign spouse demographics",
         "Jun Miano",
+        "DEP DataHub Contribution",
         "https://github.com/Junmiano/DEP/tree/main",
         show_booking=False,
         is_portfolio=True,
@@ -112,6 +125,7 @@ PORTFOLIO_CARDS = [
         "img/DEP4G-StormChaser.png",
         "A simulated real-time typhoon visualization system that scrapes and animates tropical storms worldwide.",
         "Noel Adante",
+        "DEP DataHub Contribution",
         "https://github.com/TreacherousDev/Stormchaser",
         show_booking=False,
         is_portfolio=True,

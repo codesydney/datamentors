@@ -15,37 +15,43 @@ styles = Style("""
         height: 550px;
     }
     .card-title {
-        margin-top: 10px;
-        margin-bottom: 0;
+        margin: 10px 0; /* Explicit margin control */
         padding: 0;
         font-size: 18px;
         text-align: center;
     }
     .card-description {
-        margin: 0;
+        margin: 5px 0; /* Space between description lines */
         padding: 0;
         font-size: 16px;
         text-align: center;
     }
+    .card-description-small {
+        margin: 5px 0; /* Adjust spacing for smaller text */
+        padding: 0;
+        font-size: 14px; /* Smaller font size for specific lines */
+        text-align: center;
+    }
     .linkedin-icon {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
     .linkedin-link {
         display: block;
         text-align: center;
-        margin: 0;
+        margin: 10px 0; /* Ensure spacing for the LinkedIn icon */
         padding: 0;
     }
     .booking-button {
         display: inline-block;
         padding: 5px 16px;
-        margin: 0 auto;
+        margin: 2px auto; /* Center and add spacing above/below */
         text-align: center;
-        background-color: #ffffff;
-        color: black;
+        background-color: #4c6c8c;
+        color: white;
+        font-size: 14px;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 10px;
     }
     .burger-icon {
         cursor: pointer;
@@ -68,5 +74,4 @@ styles = Style("""
     a {
         text-decoration: none;
     }
-
 """)
