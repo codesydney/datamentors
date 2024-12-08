@@ -156,9 +156,9 @@ PORTFOLIO_CARDS = [
         "Stormchaser",
         "img/GlobalFinancialInclusion.png",
         "Global Financial Inclusion Insights",
-        "Noel Adante",
+        "Jericho Arcelao",
         "DEP DataHub Contribution",
-        "https://findex21.pages.dev/charts/",
+        "https://github.com/jarcelao/global-financial-inclusion",
         "https://github.com/jarcelao",
         is_portfolio=True,
         icon_size=50
