@@ -151,5 +151,16 @@ PORTFOLIO_CARDS = [
         "https://github.com/TreacherousDev",
         is_portfolio=True,
         icon_size=50
-    )    
+    ),
+    card_3d(
+        "Stormchaser",
+        "img/GlobalFinancialInclusion.png",
+        "Global Financial Inclusion Insights",
+        "Noel Adante",
+        "DEP DataHub Contribution",
+        "https://findex21.pages.dev/charts/",
+        "https://github.com/jarcelao",
+        is_portfolio=True,
+        icon_size=50
+    )           
 ]
