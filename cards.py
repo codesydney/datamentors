@@ -1,5 +1,19 @@
 from fasthtml.common import A, Div, H3, Img, P, Style
 
+def generate_github_link(github_link, margin_top="0"):
+    """Generate GitHub link with an icon."""
+    return A(
+        Img(
+            src="img/github.png",  # Path to the GitHub icon
+            alt="GitHub",
+            _class="github-icon",
+            style=f"margin-top: {margin_top};"  # Control the top margin dynamically
+        ),
+        href=github_link,
+        target="_blank",
+        _class="github-link"
+    )
+
 def generate_linkedin_link(linkedin_link, margin_top="0"):
     """Generate LinkedIn link with an icon."""
     return A(
@@ -39,36 +53,42 @@ def generate_booking_button(booking_link, margin_bottom="10px"):
     )
 
 def card_3d(
-    title, background, line1, line2, line3, link, show_booking=True, 
-    booking_link="", is_portfolio=False, icon_size=None, 
-    button_margin_bottom="5px", space_between_button_and_icon="5px"
+    title, background, line1, line2, line3, project_link, github_link, 
+    show_booking=False, booking_link=None, is_portfolio=False, 
+    icon_size=None, button_margin_bottom="5px", space_between_button_and_icon="5px"
 ):
     """Generate a 3D card component with mentor or portfolio details."""
     card_body = [
-        H3(line1, _class="card-title"),
+        A(
+            Div(
+                _style=f"background-image: url('{background}'); width: 600px; height: 450px;",
+                _class="card-image"
+            ),
+            href=project_link,
+            target="_blank",
+        ),
+        A(
+            H3(line1, _class="card-title"),
+            href=project_link,
+            target="_blank",
+        ),
         P(line2, _class="card-description"),
         P(line3, _class="card-description-small"),
     ]
-    if show_booking and not is_portfolio:
-        # Add the booking button with dynamic margin
+    
+    if show_booking and booking_link:
+        # Add booking button if applicable
         card_body.append(generate_booking_button(booking_link, margin_bottom=button_margin_bottom))
     
     if is_portfolio:
-        card_body.append(generate_portfolio_link(link, icon_size))
+        # Use GitHub icon for portfolio cards
+        card_body.append(generate_github_link(github_link))
     else:
-        # Pass space_between_button_and_icon as the margin_top for LinkedIn
-        card_body.append(generate_linkedin_link(link, margin_top=space_between_button_and_icon))
-
+        # Use LinkedIn icon for mentor cards
+        card_body.append(generate_linkedin_link(github_link, margin_top=space_between_button_and_icon))
+    
     return Div(
         Div(
-            Div(
-                _style=f"""
-                    background-image: url('{background}');
-                    width: 600px;
-                    height: 450px;
-                """,
-                _class="card-image"
-            ),
             Div(
                 *card_body,
                 _class="card-content"
@@ -89,7 +109,8 @@ MENTOR_CARDS = [
         "Engramar Bollas",
         "Basic Python Mentor ($0 per hour)",
         "Guidance on Python for Everybody Course by Prof. Charles Severance",
-        "https://linkedin.com/in/engramarbollas",
+        "https://koalendar.com/e/meet-with-code-sydney",
+        "https://linkedin.com/in/engramarbollas",  # LinkedIn link
         show_booking=True,
         booking_link="https://koalendar.com/e/meet-with-code-sydney",
         button_margin_bottom="1px",  # Space below the button
@@ -105,7 +126,7 @@ PORTFOLIO_CARDS = [
         "Chris Formoso",
         "DEP DataHub Contribution",
         "https://github.com/dataengineeringpilipinas/datahub/blob/main/docs/projects/emigrant-country-dashboard.md",
-        show_booking=False,
+        "https://github.com/chrisformoso-ca", 
         is_portfolio=True,
         icon_size=50
     ),
@@ -116,7 +137,7 @@ PORTFOLIO_CARDS = [
         "Jun Miano",
         "DEP DataHub Contribution",
         "https://github.com/Junmiano/DEP/tree/main",
-        show_booking=False,
+        "https://github.com/Junmiano",
         is_portfolio=True,
         icon_size=50
     ),
@@ -127,7 +148,7 @@ PORTFOLIO_CARDS = [
         "Noel Adante",
         "DEP DataHub Contribution",
         "https://github.com/TreacherousDev/Stormchaser",
-        show_booking=False,
+        "https://github.com/TreacherousDev",
         is_portfolio=True,
         icon_size=50
     )    

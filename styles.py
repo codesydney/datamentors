@@ -42,6 +42,18 @@ styles = Style("""
         margin: 10px 0; /* Ensure spacing for the LinkedIn icon */
         padding: 0;
     }
+    .github-icon {
+        width: 25px; /* Same size as the LinkedIn icon */
+        height: 25px;
+        vertical-align: middle; /* Align vertically similar to LinkedIn icon */
+        margin: 10px auto; /* Center and add spacing for the icon */
+    }
+    .github-link {
+        display: block;
+        text-align: center;
+        margin: 10px 0; /* Ensure spacing for the GitHub icon */
+        padding: 0;
+    }    
     .booking-button {
         display: inline-block;
         padding: 10px 18px;
