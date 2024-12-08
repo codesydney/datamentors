@@ -153,7 +153,7 @@ PORTFOLIO_CARDS = [
         icon_size=50
     ),
     card_3d(
-        "Stormchaser",
+        "Global Financial Inclusion",
         "img/GlobalFinancialInclusion.png",
         "Global Financial Inclusion Insights",
         "Jericho Arcelao",
@@ -162,5 +162,16 @@ PORTFOLIO_CARDS = [
         "https://github.com/jarcelao",
         is_portfolio=True,
         icon_size=50
-    )           
+    ),           
+    card_3d(
+        "Stormchaser",
+        "img/DutchVisaSponsors.png",
+        "Dutch Work Visa Sponsor Search",
+        "Rowan Jacobs",
+        "Code.Sydney Contribution",
+        "https://github.com/rowanjacobscode/Dutch-Recognised-sponsors",
+        "https://github.com/rowanjacobscode",
+        is_portfolio=True,
+        icon_size=50
+    )        
 ]
