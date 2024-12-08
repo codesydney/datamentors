@@ -75,11 +75,11 @@ def render_page(heading, placeholder, cards):
                 Img(
                     src="/img/DataMentorsLogo.png",
                     alt="DataMentors Logo",
-                    _style="width: 200px; margin-bottom: 10px;"
+                    _style="width: 200px; margin-bottom: 5px;"
                 ),
                 _style="text-align: center;"
             ),
-            H1("Data Mentors", _style="text-align: center; margin-bottom: 20px;"),
+            H1("Data Mentors", _style="text-align: center; margin-top: 5px; margin-bottom: 20px;"),  
             H2(heading, _style="text-align: center; margin-bottom: 20px;"),
             Div(
                 P(
