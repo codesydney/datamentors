@@ -121,7 +121,7 @@ MENTOR_CARDS = [
 PORTFOLIO_CARDS = [
     card_3d(
         "Emigrant Data Analysis (1981-2022)",
-        "img/DEP4G-Emigration.png",
+        "img/EmigrationTrends.png",
         "Analysis of emigration trends",
         "Chris Formoso",
         "DEP DataHub Contribution",
@@ -132,7 +132,7 @@ PORTFOLIO_CARDS = [
     ),
     card_3d(
         "Foreign Spouse Exploratory Data Analysis",
-        "img/DEP4G-Foreign-Spouse.png",
+        "img/ForeignSpouse.png",
         "Insights into foreign spouse demographics",
         "Jun Miano",
         "DEP DataHub Contribution",
@@ -143,8 +143,8 @@ PORTFOLIO_CARDS = [
     ),
     card_3d(
         "Stormchaser",
-        "img/DEP4G-StormChaser.png",
-        "A simulated real-time typhoon visualization system that scrapes and animates tropical storms worldwide.",
+        "img/StormChaser.png",
+        "Tropical Storm Simulator",
         "Noel Adante",
         "DEP DataHub Contribution",
         "https://github.com/TreacherousDev/Stormchaser",

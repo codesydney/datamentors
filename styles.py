@@ -9,10 +9,11 @@ styles = Style("""
         justify-content: space-between;
     }
     .card-image {
-        background-size: cover;
-        background-position: center;
+        background-size: contain; /* Ensure the entire image fits inside */
+        background-repeat: no-repeat; /* Prevent repeating of the image */
+        background-position: center; /* Center the image */
         width: 600px;
-        height: 550px;
+        height: 600px; /* Adjust height to match aspect ratio if needed */
     }
     .card-title {
         margin: 10px 0; /* Explicit margin control */
